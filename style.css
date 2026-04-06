@@ -1,0 +1,177 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full viewport with soft gradient background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #fdeff2 0%, #ffe6f0 100%);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Main container – flex centering */
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card: modern, soft, rounded, with subtle shadow */
+.card {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
+  border-radius: 2.5rem;
+  padding: 2rem 1.8rem 2.2rem 1.8rem;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* GIF wrapper: ensures proper spacing and max size */
+.gif-wrapper {
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+/* The cute cat GIF – responsive, smooth corners */
+.cute-cat-gif {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 12px 22px -10px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  background-color: #fff0f3;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+/* Heartfelt message */
+.heartfelt-message {
+  font-size: 1.65rem;
+  line-height: 1.35;
+  font-weight: 600;
+  background: linear-gradient(135deg, #b83b5e, #6a2e5c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 5px rgba(255, 215, 225, 0.5);
+  margin-top: 0.5rem;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+/* Sound toggle button */
+.sound-toggle {
+  background: #ffd9e2;
+  border: none;
+  border-radius: 60px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a2a3b;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 10px 0 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.sound-toggle:active {
+  transform: scale(0.96);
+}
+
+/* Floating heart animation */
+.floating-heart {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.8rem;
+  animation: floatUp 1s ease-out forwards;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-80px) scale(1.2); opacity: 0; }
+}
+
+/* Sparkle cursor */
+.sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffb7c5, #ffd966);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: sparkleFade 0.6s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* Paw print */
+.paw-print {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: bounceUp 0.7s ease-out forwards;
+  z-index: 1000;
+}
+
+@keyframes bounceUp {
+  0% { transform: translateY(0) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-50px) scale(1); opacity: 0; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 560px) {
+  .card {
+    padding: 1.5rem 1.2rem 1.8rem;
+  }
+  .heartfelt-message {
+    font-size: 1.4rem;
+  }
+  .cute-cat-gif {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 380px) {
+  .heartfelt-message {
+    font-size: 1.25rem;
+  }
+  .card {
+    border-radius: 2rem;
+    padding: 1.2rem;
+  }
+}
+
+/* Entrance animation */
+@keyframes softRise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card {
+  animation: softRise 0.55s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
