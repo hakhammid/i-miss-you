@@ -21,7 +21,7 @@
         // --- LOCAL MP3 SOUND ---
         let soundEnabled = false;
         let meowAudio = null;
-        const soundFileName = 'scottishperson-sound-effect-cat-meow-279336.mp3';
+        const soundFileName = 'ssstik.io_1775466070851.mp3';
         
         function playMeow() {
             if (!soundEnabled) return;
